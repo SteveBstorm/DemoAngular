@@ -1,0 +1,19 @@
+<h3>Chronomètre</h3>
+
+<nb-card>
+    <nb-card-body>
+        <p>Temps : {{ temps | toTime }}</p>
+
+        <button nbButton (click)="start()"
+                status="success"
+                [disabled]="timer"
+                >Start</button>
+        <button nbButton (click)="stop()"
+                status="danger"
+                [disabled]="!timer"
+                >Stop</button>
+        <button nbButton (click)="reset()"
+                [disabled]="!temps"
+                >Reset</button>
+    </nb-card-body>
+</nb-card>

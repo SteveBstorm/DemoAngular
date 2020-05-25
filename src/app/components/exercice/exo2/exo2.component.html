@@ -1,0 +1,27 @@
+<h3>Panier de course</h3>
+
+<nb-card>
+    <nb-card-header>
+        <input nbInput [(ngModel)]="newItem">
+        <button nbButton (click)="add()" [disabled]="!newItem">ajout</button>
+    </nb-card-header>
+
+    <nb-card-body>
+        <ul>
+            <li *ngFor="let item of items; let i = index">
+                <label (click)="check(item)"
+                [ngStyle]="{'text-decoration': item.isChecked ? 'line-through': 'none'}">
+                {{item.item | titlecase}} : {{item.count}} &nbsp;
+                </label>
+                <button nbButton status="success" 
+                        (click)="addOne(i)">+</button>
+                        
+                <button nbButton status="warning" 
+                        (click)="removeOne(i)">-</button>
+                
+                <button nbButton status="danger" 
+                        (click)="remove(i)">X</button>
+            </li>
+        </ul>
+    </nb-card-body>
+</nb-card>

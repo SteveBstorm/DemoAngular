@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "devnet-angular"
+  },
+  "targets": {
+    "devnet-angular": {
+      "hosting": {
+        "DemoAngular": [
+          "devnet-angular"
+        ]
+      }
+    }
+  }
+}

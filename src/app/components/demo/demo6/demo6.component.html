@@ -1,0 +1,6 @@
+<h3>Fake Authentification</h3>
+<p>Présentation Injection dépendance + Promise JS</p>
+
+<p *ngIf="authStatus">Vous êtes connecté !</p>
+<button nbButton (click)="onSignIn()" *ngIf="!authStatus">Se Connecter</button>
+<button nbButton (click)="onSignOut()" *ngIf="authStatus">Se Déconnecter</button>

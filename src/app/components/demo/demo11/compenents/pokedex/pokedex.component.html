@@ -1,0 +1,12 @@
+<h3>Pokedex</h3>
+<nb-list>
+    <nb-list-item *ngFor="let item of model?.results">
+        <!--<a (click)="onClick(item.url)">{{item.name}}</a>-->
+        <a [routerLink]="['../pokemondetails2', item.url]">{{item.name}}</a>
+    </nb-list-item>
+</nb-list>
+
+<app-pokemomdetails [url]="temp"></app-pokemomdetails>
+
+<button nbButton (click)="clickPrevious()" [disabled]="!model.previous">Précédent</button>
+<button nbButton (click)="clickNext()" [disabled]="!model.next">Suivant</button>

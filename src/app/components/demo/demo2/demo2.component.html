@@ -1,0 +1,6 @@
+<p>Demo Events</p>
+
+<p>La valeur du nombre est : {{ nombre }}</p>
+
+<button nbButton status="danger" (click)="decrease()" [disabled]="nombre <= 0">-</button>
+<button nbButton status="success" (click)="increase()" [disabled]="nombre >= 9">+</button>

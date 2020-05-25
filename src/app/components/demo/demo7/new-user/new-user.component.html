@@ -1,0 +1,24 @@
+<h3>Nouvel utilisateur</h3>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+    <p><label>Prénom : </label>
+    <input  formControlName="firstName">
+    </p>
+    <p>
+    <label>Nom : </label>
+    <input formControlName="lastName">
+        </p><p>
+    <label>Email : </label>
+    <input formControlName="email">  
+</p>
+
+    <div formArrayName="films">
+        <h4>Vos films préférés</h4>
+        <label (click)="onAddFilm()">Ajouter</label>
+        <div class="form-group" *ngFor="let filmControl of getFilms().controls; let i = index">
+            <p>Film {{i+1}} : <input type="text" [formControlName]="i"></p>
+        </div>
+    </div>
+
+    <button nbButton type="submit" [disabled]="userForm.invalid">Valider</button>
+</form>
